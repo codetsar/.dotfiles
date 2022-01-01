@@ -1,2 +1,1 @@
-  init.lua
-  [ ] tmux.conf
+
