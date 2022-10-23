@@ -10,4 +10,19 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
+  use 'mechatroner/rainbow_csv'
+  use 'wakatime/vim-wakatime'
+
+  use({
+    "folke/noice.nvim",
+    event = "VimEnter",
+    config = function()
+      require("noice").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  })
+
 end)
