@@ -2,20 +2,7 @@
 [[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][youtube: emacs guide from System Crafters channel]]
 
 ** basic hotkeys
-C-h f describe-function
-*** TODO split screen
-C-x 0 (delete-window)
-C-x 1 close other windows
-C-x 2 (split-window-vertically)
-C-x 3 (split-window-horizontally)
-C-x o (other-window)
-
-** fonts
-https://github.com/ryanoasis/nerd-fonts
-
 ** TODO custom bindings
-open config
-
 ** TODO dired
 ** TODO org-mode
 ** TODO magit
@@ -26,16 +13,24 @@ https://orgmode.org/guide/Hyperlinks.html
 
 * TODO packages
 ** command-log-mode
-M-x global-command-log-mode
-M-x clm/toggle-command-log-buffer
-
+- =M-x= global-command-log-mode ::
+- =M-x= clm/toggle-command-log-buffer ::
+  
 ** TODO mode line
 
 ** TODO evil
+#+begin_verse
+As far as I know, the main org-roam developer is using evil-mode 
+(under Doom), while, iirc, Prot is with plain Emacs keybidnings.
+#+end_verse
+
 ** TODO org-roam
+https://orgmode.org/worg/orgcard.html
 ** TODO eshell
 ** TODO anki
 ** TODO git-sync
 ** TODO completion frameworks
 *** helm
 *** ivy
+
+** TODO mail
