@@ -1,0 +1,36 @@
+* TODO basic config
+[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][youtube: emacs guide from System Crafters channel]]
+
+** basic hotkeys
+** TODO custom bindings
+** TODO dired
+** TODO org-mode
+** TODO magit
+[[https://www.youtube.com/watch?v=2-0OwGTt0dI][youtube: Prot magit introduction]]
+
+** TODO hyperlinks
+https://orgmode.org/guide/Hyperlinks.html
+
+* TODO packages
+** command-log-mode
+=M-x= global-command-log-mode \\
+=M-x= clm/toggle-command-log-buffer
+  
+** TODO mode line
+
+** TODO evil
+#+begin_verse
+As far as I know, the main org-roam developer is using evil-mode 
+(under Doom), while, iirc, Prot is with plain Emacs keybidnings.
+#+end_verse
+
+** TODO org-roam
+https://orgmode.org/worg/orgcard.html
+** TODO eshell
+** TODO anki
+** TODO git-sync
+** TODO completion frameworks
+*** helm
+*** ivy
+
+** TODO mail
