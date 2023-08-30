@@ -13,8 +13,8 @@ https://orgmode.org/guide/Hyperlinks.html
 
 * TODO packages
 ** command-log-mode
-- =M-x= global-command-log-mode ::
-- =M-x= clm/toggle-command-log-buffer ::
+=M-x= global-command-log-mode \\
+=M-x= clm/toggle-command-log-buffer
   
 ** TODO mode line
 
