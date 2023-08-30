@@ -1,0 +1,41 @@
+* TODO basic config
+[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][youtube: emacs guide from System Crafters channel]]
+
+** basic hotkeys
+C-h f describe-function
+*** TODO split screen
+C-x 0 (delete-window)
+C-x 1 close other windows
+C-x 2 (split-window-vertically)
+C-x 3 (split-window-horizontally)
+C-x o (other-window)
+
+** fonts
+https://github.com/ryanoasis/nerd-fonts
+
+** TODO custom bindings
+open config
+
+** TODO dired
+** TODO org-mode
+** TODO magit
+[[https://www.youtube.com/watch?v=2-0OwGTt0dI][youtube: Prot magit introduction]]
+
+** TODO hyperlinks
+https://orgmode.org/guide/Hyperlinks.html
+
+* TODO packages
+** command-log-mode
+M-x global-command-log-mode
+M-x clm/toggle-command-log-buffer
+
+** TODO mode line
+
+** TODO evil
+** TODO org-roam
+** TODO eshell
+** TODO anki
+** TODO git-sync
+** TODO completion frameworks
+*** helm
+*** ivy
