@@ -1,12 +1,13 @@
 * TODO basic config
-[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][youtube: emacs guide from System Crafters channel]]
+[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][qSystem Crafters #1]]
 
 ** basic hotkeys
+*** DONE rebind =Caps= for =C=?
 ** TODO custom bindings
 ** TODO dired
 ** TODO org-mode
 ** TODO magit
-[[https://www.youtube.com/watch?v=2-0OwGTt0dI][youtube: Prot magit introduction]]
+[[https://www.youtube.com/watch?v=2-0OwGTt0dI][magit intro by Prot]]
 
 ** TODO hyperlinks
 https://orgmode.org/guide/Hyperlinks.html
@@ -23,6 +24,7 @@ https://orgmode.org/guide/Hyperlinks.html
 As far as I know, the main org-roam developer is using evil-mode 
 (under Doom), while, iirc, Prot is with plain Emacs keybidnings.
 #+end_verse
+[[https://www.youtube.com/watch?v=xaZMwNELaJY][System Crafters #3]]
 
 ** TODO org-roam
 https://orgmode.org/worg/orgcard.html
@@ -34,3 +36,4 @@ https://orgmode.org/worg/orgcard.html
 *** ivy
 
 ** TODO mail
+
