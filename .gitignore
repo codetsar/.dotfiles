@@ -1,3 +1,4 @@
 nvim/plugin
 /init.el~
 *.org~
+*/*.el~
