@@ -1,5 +1,49 @@
+* TODO tangle
+https://www.youtube.com/watch?v=D3FzMPZm7vY&t=655s
+* TODO babel
+** TODO ditaa
+** TODO LaTeX
+** DONE dot
+example:
+#+begin_src dot :file out.png
+digraph {
+    rankdir=LR;
+    0 [label="a"];
+    1 [label="b"];
+    2 [label="c"];
+    3 [label="d"];
+    0 -> 0;
+    0 -> 1;
+    0 -> 2;
+    0 -> 3;
+    1 -> 1;
+    2 -> 2;
+    3 -> 3;
+}
+#+end_src
+
+#+RESULTS:
+[[file:out.png]]
+
+#+begin_src sh
+  mv out.png ~/out
+#+end_src
+
+#+RESULTS:
+
+* DONE how to open it?
+bypass some port thrue ssh
+put file to some headless browser?
+so open it with ip:port from local pc
+
+python script at /home/dotfiles/serve.py
+result at 80.87.197.198:8080
+** TODO make nginx to serve this folder?
+
+move file to out folder and open this folder with simple python -m http.server!
+
 * TODO basic config
-[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][qSystem Crafters #1]]
+[[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjS][System Crafters #1]]
 
 ** basic hotkeys
 *** DONE rebind =Caps= for =C=?

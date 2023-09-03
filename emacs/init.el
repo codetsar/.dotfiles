@@ -7,6 +7,10 @@
       default-frame-alist '((undecorated . t)
                             (drag-internal-border . 1)
                             (internal-border-width . 5)))
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 ;;(set-fringe-mode 8)
 ;;(scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -66,6 +70,7 @@
   :config
   (ivy-mode 1))
 
+(use-package swiper)
 (use-package general)
 (general-define-key
  "C-M-j" 'counsel-switch-buffer)
@@ -87,16 +92,28 @@
 ;;  :ensure t
 ;;  :init (doom-modeline-mode 1))
 
+(use-package rustic
+  :ensure t
+  :config
+  (setq rustic-lsp-server 'rust-analyzer))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-babel-load-languages '((shell . t) (emacs-lisp . t) (python . t) (R . t)))
+ '(org-babel-load-languages
+   '((shell . t)
+     (emacs-lisp . t)
+     (python . t)
+     (R . t)
+     (dot . t)
+     (jupyter . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   '(magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
- ;;:'(package-selected-packages '(doom-modeline counsel ivy command-log-mode)))
+   '(rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
+;;:'(package-selected-packages '(doom-modeline counsel ivy command-log-mode)))
+(setq org-babel-python-command "python3.11")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
