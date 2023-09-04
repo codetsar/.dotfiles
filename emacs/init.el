@@ -1,3 +1,4 @@
+;;; Startup
 (setq inhibit-startup-message t
       tool-bar-mode nil
       tooltip-mode nil
@@ -7,18 +8,12 @@
       default-frame-alist '((undecorated . t)
                             (drag-internal-border . 1)
                             (internal-border-width . 5)))
-
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-
 ;;(set-fringe-mode 8)
 ;;(scroll-bar-mode -1)
 (menu-bar-mode -1)
 
-;; TODO only if GUI
-;; (set-face-attribute 'default nil
-;; 		    :font "FiraCode Nerd Font Ret"
-;; 		    :height 120)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (load-theme 'modus-operandi t)
 (global-display-line-numbers-mode 1)
@@ -26,28 +21,34 @@
 (setq history-length 25
       use-dialog-box nil
       desktop-save-mode 1
-      ;;recentf-mode 1
+      recentf-mode 1
       savehist-mode 1
       save-place-mode 1)
 
 (setq global-auto-revert-mode 1               ; Revert buffers when the underlying file has changed
       global-auto-revert-non-file-buffers t)  ; Revert Dired and other buffers
 
+;;; PACKAGE LIST
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
+        ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;;; BOOTSTRAP USE-PACKAGE
+(package-initialize)
+(setq use-package-always-ensure t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile (require 'use-package))
+
+;; TODO only if GUI
+;; (set-face-attribute 'default nil
+;; 		    :font "FiraCode Nerd Font Ret"
+;; 		    :height 120)
+
 ;; Initialize package sources
 (require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Initialize use-package on non-Linux platforms
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 (use-package command-log-mode)
 
@@ -75,17 +76,25 @@
 (general-define-key
  "C-M-j" 'counsel-switch-buffer)
 
-(use-package evil)
-(evil-mode 1)
-(setq evil-default-state 'emacs)
+(use-package evil
+  :demand t
+  :bind (("<escape>" . keyboard-escape-quit))
+  :init
+  ;; allows for using cgn
+  (setq evil-search-module 'evil-search)
+  (setq evil-want-keybinding nil)
+  ;; no vim insert bindings
+  (setq evil-undo-system 'undo-fu)
+  :config
+  (evil-mode 1))
 
-;; NOTE: the first time you load your configuration on a new machine, you'll
-;; need to run the following command interactively so that mode line icons
-;; display correctly:
-;;
-;; M-x all-the-icons-install-fonts
+;;; Vim Bindings Everywhere else
+(use-package evil-collection
+  :after evil
+  :config
+  (setq evil-want-integration t)
+  (evil-collection-init))
 
-;;(use-package all-the-icons)
 ;;(use-package all-the-icons-dired)
 
 ;;(use-package doom-modeline
