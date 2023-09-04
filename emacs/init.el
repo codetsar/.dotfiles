@@ -21,9 +21,13 @@
 (setq history-length 25
       use-dialog-box nil
       desktop-save-mode 1
-      recentf-mode 1
       savehist-mode 1
       save-place-mode 1)
+
+(require 'recentf)
+(setq recent-filename-handlers
+      (append '(abbreviate-file-name) recentf-filename-handlers))
+(recentf-mode)
 
 (setq global-auto-revert-mode 1               ; Revert buffers when the underlying file has changed
       global-auto-revert-non-file-buffers t)  ; Revert Dired and other buffers
@@ -120,7 +124,7 @@
      (jupyter . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   '(rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
+   '(undo-fu rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
 ;;:'(package-selected-packages '(doom-modeline counsel ivy command-log-mode)))
 (setq org-babel-python-command "python3.11")
 (custom-set-faces
