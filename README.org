@@ -47,6 +47,7 @@ move file to out folder and open this folder with simple python -m http.server!
 
 ** basic hotkeys
 *** DONE rebind =Caps= for =C=?
+
 ** TODO custom bindings
 ** TODO dired
 ** TODO org-mode
@@ -81,3 +82,4 @@ https://orgmode.org/worg/orgcard.html
 
 ** TODO mail
 
+** TODO fix doom-nord theme, hl text not visible

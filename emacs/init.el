@@ -15,14 +15,28 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-(load-theme 'modus-operandi t)
-(global-display-line-numbers-mode 1)
 
-(setq history-length 25
-      use-dialog-box nil
-      desktop-save-mode 1
-      savehist-mode 1
-      save-place-mode 1)
+(if t ;; switch flag between light modus and dark nord theme
+(use-package doom-themes
+    :ensure t
+    :config
+    (setq doom-themes-enable-bold t
+	  doom-themes-enable-italic nil
+	  )
+    
+    (load-theme 'doom-nord t)
+    ;;(doom-themes-neotree-config)
+    (doom-themes-org-config))
+(load-theme 'modus-operandi))
+
+
+(global-display-line-numbers-mode 1)
+;;
+;;(setq history-length 25
+;;      use-dialog-box nil
+;;      desktop-save-mode 1
+;;      savehist-mode 1
+;;      save-place-mode 1)
 
 (require 'recentf)
 (setq recent-filename-handlers
@@ -115,21 +129,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" default))
  '(org-babel-load-languages
    '((shell . t)
      (emacs-lisp . t)
      (python . t)
      (R . t)
      (dot . t)
-     (jupyter . t)))
+  ))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   '(undo-fu rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
+   '(org-pomodoro doom-themes undo-fu rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
 ;;:'(package-selected-packages '(doom-modeline counsel ivy command-log-mode)))
 (setq org-babel-python-command "python3.11")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(custom-set-faces)
