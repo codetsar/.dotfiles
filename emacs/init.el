@@ -16,21 +16,27 @@
 (setq auto-save-default nil)
 
 
-(if t ;; switch flag between light modus and dark nord theme
-(use-package doom-themes
-    :ensure t
-    :config
-    (setq doom-themes-enable-bold t
-	  doom-themes-enable-italic nil
-	  )
-    
-    (load-theme 'doom-nord t)
-    ;;(doom-themes-neotree-config)
-    (doom-themes-org-config))
-(load-theme 'modus-operandi))
+;;(add-to-list 'custom-theme-load-path "/home/yar/dotfiles/emacs/custom-themes")
+;;(load-theme 'minimal-light t)
+
+(if nil ;; switch flag between light modus and dark nord theme
+    (use-package doom-themes
+	:ensure t
+	:config
+	(setq doom-themes-enable-bold t
+	    doom-themes-enable-italic nil
+	    )
+
+	(load-theme 'doom-nord t)
+	;;(doom-themes-neotree-config)
+	(doom-themes-org-config))
+    (load-theme 'modus-operandi)
+)
 
 
-(global-display-line-numbers-mode 1)
+(global-display-line-numbers-mode)
+;;(setq display-line-numbers 'relative)
+(menu-bar--display-line-numbers-mode-relative)
 ;;
 ;;(setq history-length 25
 ;;      use-dialog-box nil
@@ -51,6 +57,7 @@
       '(("melpa" . "https://melpa.org/packages/")
         ("org" . "https://orgmode.org/elpa/")
         ("elpa" . "https://elpa.gnu.org/packages/")))
+
 
 ;;; BOOTSTRAP USE-PACKAGE
 (package-initialize)
@@ -124,23 +131,19 @@
   :config
   (setq rustic-lsp-server 'rust-analyzer))
 
+(setq org-log-done 'time)
+(setq org-agenda-files '("~/org/"))
+(setq calendar-week-start-day 1)
+
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" default))
  '(org-babel-load-languages
    '((shell . t)
      (emacs-lisp . t)
      (python . t)
      (R . t)
-     (dot . t)
-  ))
+     (dot . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   '(org-pomodoro doom-themes undo-fu rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
-;;:'(package-selected-packages '(doom-modeline counsel ivy command-log-mode)))
+   '(base16-theme org-pomodoro doom-themes undo-fu rustic ox-latex-subfigure csv-mode jupyter zuul magit use-package rust-mode lsp-mode gnuplot general evil doom-modeline counsel command-log-mode all-the-icons-dired)))
 (setq org-babel-python-command "python3.11")
 (custom-set-faces)
