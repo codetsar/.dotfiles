@@ -141,6 +141,7 @@
      (emacs-lisp . t)
      (python . t)
      (R . t)
+     (java . t)
      (dot . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
