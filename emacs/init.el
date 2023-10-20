@@ -24,9 +24,9 @@
 ;;; for lsp performance
 (setq read-process-output-max (* 1024 1024))
 
-;;(global-display-line-numbers-mode)
+(global-display-line-numbers-mode)
+(menu-bar--display-line-numbers-mode-relative)
 ;;(setq display-line-numbers 'relative)
-;;(menu-bar--display-line-numbers-mode-relative)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -42,8 +42,9 @@
 (setq global-auto-revert-mode 1               ; Revert buffers when the underlying file has changed
       global-auto-revert-non-file-buffers t)  ; Revert Dired and other buffers
 
+
 (use-package modus-themes
-:init (load-theme 'modus-operandi t))
+    :init (load-theme 'modus-operandi t))
 
 (use-package doom-themes
 :disabled
@@ -60,10 +61,6 @@
 
 (setq use-package-always-ensure t)
 
-(use-package undo-tree
-  :config
-  (global-undo-tree-mode 1)
-  (setq undo-tree-auto-save-history nil))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -95,6 +92,11 @@
 (general-define-key
     "C-M-j" 'counsel-switch-buffer)
 
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode 1)
+  (setq undo-tree-auto-save-history nil))
+
 (use-package evil
     :demand t
     :bind (("<escape>" . keyboard-escape-quit))
@@ -106,6 +108,8 @@
     (setq evil-undo-system 'undo-tree)
     (setq sentence-end-double-space nil))
 
+(global-undo-tree-mode)
+(evil-set-undo-system 'undo-tree)
 
 (use-package evil-collection ;; Shift-S + delimiter
     :after evil
@@ -122,6 +126,9 @@
 (setq org-capture-templates
       '(("m" "Score" entry (file "~/org/scores.org")
 	 "* score\ndate: %U\nwpm: %i\nacc (%): %i\ntime (s): %i")))
+
+;; RET will folow links in org-mode files
+;;(setq org-return-follows-link t)
 
 (setq org-list-allow-alphabetical t
       org-export-with-toc nil
